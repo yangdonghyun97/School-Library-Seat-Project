@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.student.mybatis.mapper.SeatMapper">
+
+	<insert id="insert">
+		INSERT IGNORE INTO seat_tbl (seatNo,id) VALUES (#{seatNo},#{id});
+	</insert>
+
+	<select id="seatList" resultType="com.student.mybatis.vo.SeatVO">
+		SELECT * FROM seat_tbl
+	</select>
+</mapper>

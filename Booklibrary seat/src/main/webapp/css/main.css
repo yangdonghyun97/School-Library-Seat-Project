@@ -1,0 +1,128 @@
+  .myButton {
+            box-shadow: 0px 1px 0px 0px #1c1b18;
+            background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+            background-color: #eae0c2;
+            border-radius: 15px;
+            border: 2px solid #333029;
+            display: inline-block;
+            cursor: pointer;
+            color: #505739;
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 7px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+        }
+
+        .myButton:hover {
+            background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+            background-color: #ccc2a6;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+
+        body {
+            background-image: url('../img/Library3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100vw;
+            height: 20vh;
+        }
+
+        .content {
+        margin-top:80px;
+            width: 100vw;
+            height: 60vh;
+            text-align: center;
+        }
+
+        .footer {
+            width: 100vw;
+            height: 10vh;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        p {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:link {
+            color: #00008C;
+        }
+
+        a:visited {
+            color: #0000FF;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        a:active {
+            color: black;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .header {
+                height: 30vh;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            .myButton {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header {
+                height: 40vh;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            .myButton {
+                font-size: 10px;
+            }
+        }
+       .header {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#demo {
+    text-align: center;
+}
