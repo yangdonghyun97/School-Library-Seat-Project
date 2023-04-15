@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.student.mybatis.mapper.StudentMapper">
+   <insert id="insert">
+   	INSERT INTO student_tbl (student_id,student_pw,student_name,student_tel) VALUES (#{student_id},#{student_pw},#{student_name},#{student_tel});
+   </insert>
+   <select id="studentCheck" resultType="com.student.mybatis.vo.StudentVO">
+      SELECT * FROM student_tbl WHERE student_num =#{number} and student_name= #{name}; 
+   </select>
+   <update id="update">
+	   UPDATE student_tbl set student_id = #{student_id}, student_pw = #{student_pw}, student_tel = #{student_tel} WHERE student_num = #{number}
+   </update>
+   
+   <select id="loginCheck" resultType="_int">
+	   SELECT COUNT(*) FROM student_tbl WHERE student_id = #{student_id} and student_pw= #{student_pw}
+   </select>
+    <select id="idCheck" resultType="_int">
+      SELECT COUNT(*) FROM student_tbl WHERE student_id =#{student_id}; 
+   </select>
+   
+   
+   <!-- 마이페이지 -->
+   <select id="seatCheck" resultType="com.student.mybatis.vo.SeatVO">
+   		SELECT * FROM seat_tbl WHERE id=#{id}
+   </select>
+   
+   <delete id="cencel">
+   	DELETE  FROM seat_tbl WHERE id=#{id}
+   </delete>
+   
+	<update id="pwchange">
+		UPDATE student_tbl SET student_pw=#{student_cpw} WHERE
+		student_id=#{vo.student_id} and
+		student_pw=#{vo.student_pw}
+	</update>
+
+	<update id="telchange">
+		UPDATE student_tbl SET student_tel=#{student_tel} WHERE
+		student_id=#{student_id}
+	</update>
+
+	<delete id="studentdelete">
+		DELETE FROM student_tbl WHERE student_id=#{id}
+	</delete>
+	
+		<select id="oneStudent" resultType="com.student.mybatis.vo.StudentVO">
+		SELECT *FROM
+		student_tbl WHERE student_id=#{id}
+	</select>
+	
+</mapper>
